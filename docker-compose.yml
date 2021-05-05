@@ -1,0 +1,29 @@
+version: "3.8"
+
+networks:
+  default:
+    driver: bridge
+    name: ${NETWORK_NAME}
+    ipam:
+      driver: default
+      config:
+        - subnet: ${NETWORK_SUBNET}
+
+services:
+  app:
+    image: python-runner:latest
+    container_name: docker-agent
+    environment:
+      - SNOWFLAKE_ACCOUNTNAME=${SNOWFLAKE_ACCOUNTNAME}
+      - SNOWFLAKE_USERNAME=${SNOWFLAKE_USERNAME}
+      - SNOWFLAKE_PASSWORD=${SNOWFLAKE_PASSWORD}
+      - SNOWFLAKE_DBNAME=${SNOWFLAKE_DBNAME}
+      - SNOWFLAKE_WAREHOUSENAME=${SNOWFLAKE_WAREHOUSENAME}
+      - SNOWFLAKE_ROLENAME=${SNOWFLAKE_ROLENAME}
+      - SNOWFLAKE_SCHEMANAME=${SNOWFLAKE_SCHEMANAME}
+    stdin_open: true
+    tty: true
+    restart: always
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./data:/usr/src/app/data
