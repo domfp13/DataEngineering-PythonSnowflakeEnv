@@ -26,4 +26,3 @@ services:
     restart: always
     volumes:
       - ./src:/usr/src/app/src
-      - ./data:/usr/src/app/data

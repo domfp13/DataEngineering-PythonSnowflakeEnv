@@ -245,4 +245,10 @@ $RECYCLE.BIN/
 packaged.yaml
 packaged-template.yaml
 
+# CSV fiels
+*.csv
+
+# Pages
+pages*
+
 # End of block
