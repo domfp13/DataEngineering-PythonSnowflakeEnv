@@ -2,7 +2,7 @@
 -- Created by Luis Fuentes
 
 USE WAREHOUSE BI_WH_XS;
-USE CC_DW;
+USE CC_TEST.CC_DW;
 
 -- 1.- Creating file format
 CREATE OR REPLACE FILE FORMAT FILE_GENERIC
