@@ -8,3 +8,4 @@ if __name__ == '__main__':
 
     data_loader = DataLoader()
     print(data_loader.get_all_sales())
+    print ("Change!")
